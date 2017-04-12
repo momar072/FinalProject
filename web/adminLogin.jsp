@@ -14,7 +14,7 @@
         Admin Login: <br><br>
         Email: <input type="text" name="adminEmail" value="" /><br><br>
         Password:<input type="text" name="adminPassword" value="" /><br><br>
-        <input type="submit" value="Login" name="login" /><br><br>
+        <a href="adminMain.jsp"><button>Login</button></a><br><br>
         <a href="registration.jsp"><button>Register</button></a><br><br>
         <a href="customerLogin.jsp"><button>Go To Customer Login</button></a>
         
