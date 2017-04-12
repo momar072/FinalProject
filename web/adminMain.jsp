@@ -16,7 +16,7 @@
         <input type="submit" value="Function3" name="function3" /><br><br>
         <input type="submit" value="Function4" name="function4" /><br><br>
         
-        <a href="search.jsp"><button>Search</button></a><br><br>
+        <a href="searchMain.jsp"><button>Search</button></a><br><br>
 
     </body>
 </html:html>
