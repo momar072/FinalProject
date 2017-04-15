@@ -10,7 +10,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-        <title>Success page</title>
+        <title>Success Page</title>
     </head>
     <body bgcolor="silver">
         <table><tr>Welcome</tr><br><br>
