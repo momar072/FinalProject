@@ -39,6 +39,38 @@
             </c:forEach>
         </table>
 
+        <p>Most Popular Categories</p>
+        <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
+                           url="jdbc:mysql://localhost:3306/sakila"
+                           user="root" password="root" />
+        <sql:query dataSource="${snapshot}" var="result">
+            SELECT c.name, count(distinct r.rental_id) as 'Number_Rents'
+            FROM inventory as i
+                JOIN film as f
+                    ON i.film_id = f.film_id
+                JOIN rental as r
+                    ON r.inventory_id = i.inventory_id
+                JOIN film_category as fc
+                    ON fc.film_id = f.film_id
+                JOIN category as c
+                    ON fc.category_id = c.category_id
+            WHERE r.return_date IS NOT NULL
+            GROUP BY c.name
+            ORDER BY count(distinct r.rental_id) DESC
+        </sql:query>
+        <table border="1">
+            <tr>
+                <th>Category</th>
+                <th>Total Rentals to Date</th>
+            </tr>
+            <c:forEach var="row" items="${result.rows}">
+                <tr>
+                    <th><c:out value="${row.name}"/></th>   
+                    <th><c:out value="${row.Number_Rents}"/></th>
+                </tr>
+            </c:forEach>
+        </table>
+
         <p>Customer Information (Active)</p>
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
@@ -46,12 +78,12 @@
         <sql:query dataSource="${snapshot}" var="result">
             SELECT c.first_name, c.last_name, c.email, a.phone, a.address, city.city, a.district, a.postal_code, country.country, c.store_id
             FROM customer as c
-                JOIN address as a   
-                    ON c.address_id = a.address_id
-                JOIN city as city
-                    ON a.city_id = city.city_id
-                JOIN country as country
-                    ON city.country_id = country.country_id
+            JOIN address as a   
+            ON c.address_id = a.address_id
+            JOIN city as city
+            ON a.city_id = city.city_id
+            JOIN country as country
+            ON city.country_id = country.country_id
             WHERE active is true
             GROUP BY c.store_id, c.last_name, c.customer_id
         </sql:query>
