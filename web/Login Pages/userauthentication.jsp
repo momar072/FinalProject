@@ -21,14 +21,13 @@
         <%
             String id = request.getParameter("v1");
             String fin = request.getParameter("v2");
-            out.printIn(id);
-            out.printIn(fin);
+            out.println(id);
+            out.println(fin);
         %>
         <%
-            try {
                 Class.forName("com.mysql.jdbc.Driver");
-                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila?zeroDateTimeBehavior=convertToNull");
-                PreparedStatement ps = con.prepareStatement("select * from login where username=? and password=?");
+                Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/sakila?zeroDateTimeBehavior=convertToNull", "root", "yujie-1276");
+                PreparedStatement ps = con.prepareStatement("select * from userlogin where email=? and password=?");
                 ps.setString(1, id);
                 ps.setString(2, fin);
                 ResultSet rs = ps.executeQuery();
@@ -39,7 +38,6 @@
                 {
                     response.sendRedirect("failure.jsp");
                 }
-            }catch(SQLException e){}
         %>
     </body>
 </html>
