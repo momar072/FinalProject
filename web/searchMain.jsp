@@ -9,7 +9,7 @@
 
 <html:html lang="true">
     <head>
-        <title>Admin Main Page</title>
+        <title>Search Page</title>
     </head>
     <body>
 
@@ -29,7 +29,7 @@
 
         <sql:setDataSource var="snapshot" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/sakila"
-                           user="root"  password="yujie-1276"/>
+                           user="root"  password="root"/>
 
         <sql:query dataSource="${snapshot}" var="result">
             SELECT *
