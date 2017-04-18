@@ -9,6 +9,7 @@
     <form-beans>
         <form-bean name="registerForm" type="com.myapp.struts.registerForm"/> 
         <form-bean name="searchForm" type="com.myapp.struts.searchForm"/> 
+        <form-bean name="filmsForRentForm" type="com.myapp.struts.searchForm"/> 
     </form-beans>
     
     <global-exceptions>
