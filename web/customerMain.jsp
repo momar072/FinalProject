@@ -81,8 +81,8 @@
                     <td><c:out value="${row.rating}"/></td>
                     <td><c:out value="${row.special_features}"/></td>
                     <td><c:out value="${row.last_update}"/></td>
-                    <td><a href="OrderController?action=edit&order_num=<c:out value="${row.film_id}"/>">Cart</a></td>
-                    <td><a href="OrderController?action=edit&order_num=<c:out value="${row.film_id}"/>">Wishlist</a></td>
+                    <td><a href="filmsForRentAction=edit&film_id=<c:out value="${row.film_id}"/>">Cart</a></td>
+                    <td><a href="filmsForRentAction=edit&film_id=<c:out value="${row.film_id}"/>">Wishlist</a></td>
                 </tr>
             </c:forEach>
         </table>

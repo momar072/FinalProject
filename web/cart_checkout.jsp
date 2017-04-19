@@ -39,7 +39,7 @@
             </tr>
             <c:forEach var="row" items="${result.rows}">
                 <tr>
-                    <td><c:out value="${row.film_id}"/></td>
+                <td><c:out value="${row.film_id}"/></td>
                 <td><c:out value="${row.title}"/></td>
                 <td><c:out value="${row.description}"/></td>
                 <td><c:out value="${row.release_year}"/></td>
@@ -52,8 +52,8 @@
                 <td><c:out value="${row.rating}"/></td>
                 <td><c:out value="${row.special_features}"/></td>
                 <td><c:out value="${row.last_update}"/></td>
-                <td><a href="OrderController?action=edit&order_num=<c:out value="${row.film_id}"/>">Wishlist</a></td>
-                <td><a href="OrderController?action=edit&order_num=<c:out value="${row.film_id}"/>">Delete</a></td>
+                <td><a href="filmsForRentAction=edit&film_id=<c:out value="${row.film_id}"/>">Wishlist</a></td>
+                <td><a href="filmsForRentAction?action=edit&film_id=<c:out value="${row.film_id}"/>">Delete</a></td>
                 </tr>
             </c:forEach>
         </table>

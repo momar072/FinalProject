@@ -1,12 +1,15 @@
 package com.myapp.struts;
 
 
-import com.myapp.struts.filmsForRentForm;
+
+
 import java.sql.Date;
 import java.sql.Timestamp;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+
+import org.apache.struts.action.Action;
 import org.apache.struts.action.ActionForm;
 import org.apache.struts.action.ActionForward;
 import org.apache.struts.action.ActionMapping;
@@ -65,7 +68,10 @@ public class filmsForRentAction {
 //               || special_features.equals("")|| last_update.equals(""){
 //           return mapping.findForward("error");
 //        }
-        
+//        filmsForRentDAO dao = new filmsForRentDAO();
+//
+//        dao.insertFilmAfterRented(rental_date,inventory_id,customer_id,
+//            return_date,staff_id,last_update);
         return mapping.findForward("response");
     }
     
